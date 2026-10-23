@@ -1,150 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kumar Satyam | Junior SOC Analyst and Penetration Testing</title>
-<meta name="description" content="Interactive terminal portfolio of Kumar Satyam, a BCA graduate from Delhi training as a SOC analyst and penetration tester.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<title>Satyam Kumar | Cybersecurity Portfolio</title>
+<meta name="description" content="Cybersecurity portfolio of Satyam Kumar, a BCA graduate focused on ethical hacking, network security, and security automation.">
+
 <style>
-:root{--bg:#090e13;--panel:#0d151c;--ink:#c8d6e0;--dim:#6f8394;--green:#5ef2a0;--amber:#ffc857;--blue:#7db4ff;--line:#1c2a35;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);font:400 .95rem/1.6 var(--mono);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-.bar{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;background:var(--panel);border-bottom:1px solid var(--line);font-size:.8rem;color:var(--dim)}
-.bar i{width:10px;height:10px;border-radius:50%;background:#2b3b48}
-.bar span{margin-left:.5rem}
-#term{flex:1;overflow-y:auto;padding:1rem 1rem .5rem;max-width:56rem;width:100%;margin:0 auto}
-.ln{white-space:pre-wrap;word-break:break-word;margin:0 0 .15rem}
-.ln.gap{margin-bottom:.9rem}
-.p{color:var(--green)}.h{color:var(--amber);font-weight:600}.d{color:var(--dim)}.ok{color:var(--green)}.k{color:var(--blue)}
-.row{display:flex;gap:.6rem;align-items:center;padding:.4rem 1rem;max-width:56rem;width:100%;margin:0 auto}
-.row label{color:var(--green);white-space:nowrap}
-#cmd{flex:1;min-width:0;background:transparent;border:0;color:var(--ink);font:inherit;caret-color:var(--green);padding:.3rem 0}
-#cmd::placeholder{color:#3d4f5d}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem 1rem;max-width:56rem;width:100%;margin:0 auto;border-top:1px solid var(--line)}
-.chips button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:.45rem .8rem;font:500 .85rem var(--mono);cursor:pointer}
-.chips button:hover,.chips button:active{border-color:var(--green);color:var(--green)}
-.chips .hire{border-color:var(--amber);color:var(--amber)}
-noscript{display:block;padding:1.5rem;max-width:40rem;margin:0 auto;color:var(--ink)}
+:root {
+  --bg: #080b12;
+  --panel: #101622;
+  --panel2: #141d2b;
+  --text: #edf3ff;
+  --muted: #9aa9bd;
+  --green: #43f5a1;
+  --blue: #67a8ff;
+  --border: rgba(255,255,255,.10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(67,245,161,.08), transparent 35%),
+    radial-gradient(ellipse at 90% 15%, rgba(103,168,255,.08), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, input { font: inherit; }
+
+.container {
+  width: min(1080px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,11,18,.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+.logo span { color: var(--green); }
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.hero {
+  padding: 100px 0 75px;
+  display: grid;
+  grid-template-columns: 1.5fr .8fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -3px;
+  margin: 18px 0;
+}
+
+h1 span { color: var(--green); }
+
+.hero p {
+  max-width: 610px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 9px;
+  font-weight: 750;
+  border: 1px solid var(--border);
+  transition: .2s;
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--green);
+  color: #07110c;
+  border-color: var(--green);
+}
+
+.btn-secondary { background: var(--panel); }
+
+.terminal {
+  background: #070b10;
+  border: 1px solid rgba(67,245,161,.25);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 70px rgba(0,0,0,.3);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.terminal-top {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #596477;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-size: .84rem;
+  min-height: 220px;
+}
+
+.green { color: var(--green); }
+.blue { color: var(--blue); }
+.muted { color: var(--muted); }
+
+section { padding: 65px 0; }
+
+.section-head { margin-bottom: 28px; }
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -1px;
+  margin: 6px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: rgba(16,22,34,.85);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 23px;
+}
+
+.panel h3 { margin-top: 0; }
+
+.panel p, .panel li { color: var(--muted); }
+
+.panel ul { padding-left: 20px; }
+
+.project-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.filter {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--panel);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filter.active, .filter:hover {
+  background: rgba(67,245,161,.12);
+  color: var(--green);
+  border-color: rgba(67,245,161,.5);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.project {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 23px;
+  transition: .2s;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  border-color: rgba(67,245,161,.4);
+}
+
+.project[hidden] { display: none; }
+
+.project-type {
+  color: var(--green);
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 800;
+}
+
+.project h3 { margin: 9px 0; }
+
+.project p { color: var(--muted); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 15px 0;
+}
+
+.tag {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  color: #c4d1e2;
+  font-size: .76rem;
+}
+
+.details {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.details summary {
+  color: var(--green);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.details p { font-size: .9rem; }
+
+.project-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: .9rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 14px;
+}
+
+.skill small {
+  display: block;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.contact-box {
+  text-align: center;
+  padding: 42px 22px;
+  border: 1px solid rgba(67,245,161,.25);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(67,245,161,.07), rgba(103,168,255,.06));
+}
+
+.contact-box h2 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin: 8px 0;
+}
+
+.contact-box p { color: var(--muted); }
+
+footer {
+  padding: 25px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+}
+
+#command-input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--green);
+  font-family: inherit;
+}
+
+.terminal-form {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.terminal-form label { color: var(--green); }
+
+#terminal-output {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-bottom: 15px;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 65px; }
+  .about-grid, .projects-grid { grid-template-columns: 1fr; }
+  .nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+  .nav-links { gap: 14px; }
+  h1 { letter-spacing: -1.5px; }
+}
 </style>
 </head>
+
 <body>
-<div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>visitor@kumar-satyam: ~</span></div>
-<main id="term" role="log" aria-live="polite" aria-label="Terminal output" tabindex="-1"></main>
-<form class="row" id="f" autocomplete="off">
-  <label for="cmd">visitor@kumar:~$</label>
-  <input id="cmd" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="type help" aria-label="Type a command and press Enter">
-</form>
-<nav class="chips" aria-label="Quick commands">
-  <button type="button" data-c="help">help</button>
-  <button type="button" data-c="whoami">whoami</button>
-  <button type="button" data-c="skills">skills</button>
-  <button type="button" data-c="projects">projects</button>
-  <button type="button" data-c="learning">learning</button>
-  <button type="button" data-c="contact">contact</button>
-  <button type="button" data-c="sudo hire kumar" class="hire">sudo hire kumar</button>
-</nav>
-<noscript>
-  <h1>Kumar Satyam</h1>
-  <p>Junior SOC analyst and penetration tester in training. BCA, Maharshi Dayanand University (2026). Delhi, India.</p>
-  <p>Skills: Kali Linux, Nmap, Metasploit, Wireshark, Splunk, Python. Projects: Python antivirus simulation, home security lab, Raspberry Pi 4 cyberdeck.</p>
-  <p>Email: <a href="mailto:kts441315@gmail.com">kts441315@gmail.com</a> | <a href="https://github.com/KumarSatyam36">GitHub</a> | <a href="https://www.linkedin.com/in/kumar-satyam-322b43198">LinkedIn</a></p>
-</noscript>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">SATYAM<span>.</span>SEC</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#terminal">Terminal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container hero" id="home">
+    <div>
+      <div class="eyebrow">Cybersecurity Portfolio</div>
+      <h1>Securing systems.<br>Learning to <span>think</span> like an attacker.</h1>
+      <p>
+        I'm Satyam Kumar, a BCA graduate building practical skills in
+        cybersecurity, network security, ethical hacking, and security automation.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">Explore Projects ↘</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-top">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span style="margin-left:8px">satyam@portfolio:~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="green">$ whoami</div>
+        <p>Cybersecurity learner</p>
+        <div class="green">$ focus --areas</div>
+        <p>Network Security<br>Threat Detection<br>Security Automation</p>
+        <div class="green">$ status</div>
+        <p>Building. Testing. Improving.<span class="green"> ▊</span></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">01 / About</div>
+        <h2>Curiosity backed by practice.</h2>
+        <p>A technical foundation with a focus on hands-on security learning.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="panel">
+          <h3>Who I Am</h3>
+          <p>
+            I'm a BCA graduate working toward an entry-level cybersecurity role.
+            My goal is to develop useful security skills through practical
+            projects, documentation, and continuous learning.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h3>What I'm Working Toward</h3>
+          <ul>
+            <li>Understanding network traffic and common attack patterns.</li>
+            <li>Automating repetitive security tasks with Python.</li>
+            <li>Learning security monitoring and cloud security fundamentals.</li>
+            <li>Documenting projects clearly and responsibly.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">02 / Projects</div>
+        <h2>Practical security work.</h2>
+        <p>Choose a category and open a project to see more details.</p>
+      </div>
+
+      <div class="project-toolbar" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">All Projects</button>
+        <button class="filter" data-filter="detection">Detection</button>
+        <button class="filter" data-filter="network">Network</button>
+        <button class="filter" data-filter="cloud">Cloud</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project" data-category="detection">
+          <div class="project-type">Detection / Python</div>
+          <h3>SSH Brute-Force Detector</h3>
+          <p>A project focused on identifying suspicious SSH login activity from log data.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Log Analysis</span>
+            <span class="tag">Detection</span>
+          </div>
+          <details class="details">
+            <summary>Explore project</summary>
+            <p>
+              Describe the log sources, detection rules, thresholds, test cases,
+              and known limitations supported by your actual implementation.
+            </p>
+          </details>
+          <a class="project-link" href="https://github.com/KumarSatyam36"
+             target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+        </article>
+
+        <article class="project" data-category="network">
+          <div class="project-type">Network / Automation</div>
+          <h3>Nmap Scan Automation</h3>
+          <p>A network scanning project exploring how to automate repeatable reconnaissance tasks.</p>
+          <div class="tags">
+            <span class="tag">Nmap</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Networking</span>
+          </div>
+          <details class="details">
+            <summary>Explore project</summary>
+            <p>
+              Add the actual scan options, input validation, output format,
+              and test results from your repository. Only scan systems you
+              own or are explicitly authorized to test.
+            </p>
+          </details>
+          <a class="project-link" href="https://github.com/KumarSatyam36"
+             target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+        </article>
+
+        <article class="project" data-category="network">
+          <div class="project-type">Network / Python</div>
+          <h3>Scapy Packet Sniffer</h3>
+          <p>A packet analysis project for learning about network traffic and packet structure.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scapy</span>
+            <span class="tag">Packet Analysis</span>
+          </div>
+          <details class="details">
+            <summary>Explore project</summary>
+            <p>
+              Document which protocols are handled, what information is displayed,
+              how errors are handled, and how the tool was tested in an
+              authorized lab environment.
+            </p>
+          </details>
+          <a class="project-link" href="https://github.com/KumarSatyam36"
+             target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+        </article>
+
+        <article class="project" data-category="cloud">
+          <div class="project-type">Cloud / Security</div>
+          <h3>AWS S3 Security Auditor</h3>
+          <p>A cloud security project focused on reviewing S3 bucket configurations.</p>
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">S3</span>
+            <span class="tag">Cloud Security</span>
+          </div>
+          <details class="details">
+            <summary>Explore project</summary>
+            <p>
+              Specify the checks actually implemented, permissions required,
+              findings produced, and remediation guidance. Never include cloud
+              credentials or sensitive account information.
+            </p>
+          </details>
+          <a class="project-link" href="https://github.com/KumarSatyam36"
+             target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+        </article>
+
+      </div>
+
+      <p class="muted" style="font-size:.85rem;margin-top:20px">
+        Note: Update these project descriptions to match your actual code and results.
+        Replace the profile links with individual repository links when available.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">03 / Skills</div>
+        <h2>Tools and learning areas.</h2>
+        <p>Areas to showcase based on your real experience.</p>
+      </div>
+
+      <div class="skills">
+        <div class="skill">Python <small>Automation</small></div>
+        <div class="skill">Nmap <small>Network scanning</small></div>
+        <div class="skill">Scapy <small>Packet analysis</small></div>
+        <div class="skill">Linux <small>System fundamentals</small></div>
+        <div class="skill">Networking <small>TCP/IP fundamentals</small></div>
+        <div class="skill">AWS <small>Cloud security</small></div>
+        <div class="skill">Git & GitHub <small>Version control</small></div>
+        <div class="skill">Log Analysis <small>Security monitoring</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">04 / Interactive Feature</div>
+        <h2>Portfolio terminal.</h2>
+        <p>Type a command below and press Enter.</p>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-top">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span style="margin-left:8px">interactive-shell</span>
+        </div>
+
+        <div class="terminal-body">
+          <div class="muted">Safe portfolio simulation — this does not execute system commands.</div>
+          <br>
+          <div id="terminal-output">Welcome. Type "help" to see available commands.</div>
+          <form class="terminal-form" id="terminal-form">
+            <label for="command-input">visitor@site:~$</label>
+            <input id="command-input" autocomplete="off" spellcheck="false"
+                   aria-label="Enter a portfolio command">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div class="eyebrow">05 / Contact</div>
+        <h2>Let's connect.</h2>
+        <p>Open to entry-level cybersecurity opportunities and professional connections.</p>
+
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-primary"
+             href="mailto:kts441315@gmail.com">Email Me</a>
+          <a class="btn btn-secondary"
+             href="https://github.com/KumarSatyam36"
+             target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        </div>
+
+        <p style="margin-top:22px;font-size:.9rem">
+          <a href="mailto:kts441315@gmail.com">kts441315@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Satyam Kumar · Cybersecurity Portfolio
+  </div>
+</footer>
+
 <script>
-(function(){
-  var term=document.getElementById('term'),input=document.getElementById('cmd'),form=document.getElementById('f');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var touch='ontouchstart' in window;
-  var history=[],hi=0;
-  function esc(s){return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function line(html,cls){var d=document.createElement('div');d.className='ln'+(cls?' '+cls:'');d.innerHTML=html;term.appendChild(d);term.scrollTop=term.scrollHeight;return d;}
-  function A(u,t){return '<a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>';}
-  var C={
-    help:function(){return [
-      '<span class="h">Commands</span>',
-      '  <span class="k">whoami</span>      who I am',
-      '  <span class="k">skills</span>      tools I use',
-      '  <span class="k">projects</span>    what I have built',
-      '  <span class="k">learning</span>    what I am working on now',
-      '  <span class="k">education</span>   my degree',
-      '  <span class="k">contact</span>     how to reach me',
-      '  <span class="k">nmap</span>        scan me',
-      '  <span class="k">clear</span>       clear the screen',
-      '<span class="d">Tip: press Tab to complete, Up arrow for history.</span>'];},
-    whoami:function(){return [
-      '<span class="h">Kumar Satyam</span>',
-      'Junior SOC analyst and penetration tester in training.',
-      'Delhi, India. Self-taught, with my own Kali Linux lab.',
-      'I look for attacks in logs and weaknesses in systems.',
-      '<span class="d">Open to entry-level SOC and security roles in Delhi NCR.</span>'];},
-    skills:function(){return [
-      '<span class="h">Monitor and investigate</span>  Splunk log search, alert triage, LetsDefend labs',
-      '<span class="h">Test and exploit</span>         Kali Linux, Nmap, Metasploit, TCP/IP',
-      '<span class="h">Analyse traffic</span>          Wireshark packet analysis',
-      '<span class="h">Build tools</span>              Python, Linux command line, Git and GitHub'];},
-    projects:function(){return [
-      '<span class="h">1. Python antivirus simulation</span>  <span class="d">(Python)</span>',
-      '   Scans files, flags suspicious ones with hash and signature detection,',
-      '   quarantines them and logs every detection. '+A('https://github.com/KumarSatyam36','Code on GitHub'),
-      '<span class="h">2. Home security lab</span>  <span class="d">(Kali, Nmap, Metasploit, Wireshark, Splunk)</span>',
-      '   Practise recon, exploitation, packet capture and log analysis.',
-      '<span class="h">3. Raspberry Pi 4 cyberdeck</span>  <span class="d">(Raspberry Pi 4, Linux)</span>',
-      '   A portable cyberdeck I am building for security tooling.'];},
-    learning:function(){return [
-      '<span class="h">Learning right now</span>',
-      '  TryHackMe and LetsDefend    hands-on rooms and labs',
-      '  Splunk Core certification   preparing',
-      '  CompTIA Security+           target December 2026'];},
-    education:function(){return ['<span class="h">BCA</span>  Maharshi Dayanand University (MDU), 2022 to 2026'];},
-    contact:function(){return [
-      '<span class="h">Email</span>     '+A('mailto:kts441315@gmail.com','kts441315@gmail.com'),
-      '<span class="h">LinkedIn</span>  '+A('https://www.linkedin.com/in/kumar-satyam-322b43198','linkedin.com/in/kumar-satyam-322b43198'),
-      '<span class="h">GitHub</span>    '+A('https://github.com/KumarSatyam36','github.com/KumarSatyam36')];},
-    nmap:function(){return [
-      '<span class="d">Starting scan of kumar-satyam (Delhi, IN)</span>',
-      'PORT          STATE      SERVICE',
-      'kali-linux    <span class="ok">open</span>       recon, exploitation',
-      'splunk        <span class="ok">open</span>       log search',
-      'wireshark     <span class="ok">open</span>       packet analysis',
-      'python        <span class="ok">open</span>       security tools',
-      'security+     <span class="d">filtered</span>   target Dec 2026',
-      '<span class="d">Scan complete: 1 candidate ready for a junior SOC role.</span>'];},
-    ls:function(){return ['whoami  skills  projects  learning  education  contact  nmap'];},
-    'sudo hire kumar':function(){return [
-      '<span class="ok">[sudo] permission granted.</span>',
-      'Great choice. Email '+A('mailto:kts441315@gmail.com','kts441315@gmail.com')+' and I will reply fast.'];}
-  };
-  var names=Object.keys(C).concat(['clear']);
-  function run(raw){
-    var cmd=raw.trim().toLowerCase().replace(/\s+/g,' ');
-    line('<span class="p">visitor@kumar:~$</span> '+esc(raw));
-    if(!cmd)return;
-    history.push(raw);hi=history.length;
-    if(cmd==='clear'){term.innerHTML='';return;}
-    if(cmd==='hire')cmd='sudo hire kumar';
-    if(cmd.indexOf('sudo')===0&&cmd!=='sudo hire kumar'){line('<span class="d">Nice try. Only one sudo command works here. Type help.</span>','gap');return;}
-    var fn=C[cmd];
-    if(!fn){line('command not found: '+esc(cmd)+'. Type <span class="k">help</span>.','gap');return;}
-    var rows=fn();
-    rows.forEach(function(r,i){line(r,i===rows.length-1?'gap':'');});
-  }
-  form.addEventListener('submit',function(e){e.preventDefault();var v=input.value;input.value='';run(v);});
-  input.addEventListener('keydown',function(e){
-    if(e.key==='ArrowUp'){if(history.length){hi=Math.max(0,hi-1);input.value=history[hi]||'';e.preventDefault();}}
-    else if(e.key==='ArrowDown'){if(history.length){hi=Math.min(history.length,hi+1);input.value=history[hi]||'';e.preventDefault();}}
-    else if(e.key==='Tab'){e.preventDefault();var v=input.value.toLowerCase();if(!v)return;var m=names.filter(function(n){return n.indexOf(v)===0;});if(m.length===1)input.value=m[0];}
+  // Update footer year.
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Interactive project filters.
+  const filterButtons = document.querySelectorAll(".filter");
+  const projects = document.querySelectorAll(".project");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      filterButtons.forEach(item => {
+        item.classList.toggle("active", item === button);
+      });
+
+      projects.forEach(project => {
+        project.hidden =
+          filter !== "all" && project.dataset.category !== filter;
+      });
+    });
   });
-  document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){run(b.getAttribute('data-c'));});});
-  term.addEventListener('click',function(e){if(!window.getSelection().toString()&&e.target.tagName!=='A'&&!touch)input.focus();});
-  var boot=['<span class="d">Booting kumar-satyam.sh ...</span>','<span class="d">Loading profile ...</span> <span class="ok">ok</span>','<span class="d">Loading projects ...</span> <span class="ok">ok</span>',' ','<span class="h">Kumar Satyam</span>  Junior SOC Analyst | Penetration Testing','Welcome. Type <span class="k">help</span> or tap a command below.',' '];
-  function show(i){if(i>=boot.length){if(!touch)input.focus();return;}line(boot[i]);setTimeout(function(){show(i+1);},reduce?0:380);}
-  show(0);
-})();
+
+  // Simulated terminal. Only recognized portfolio commands are handled.
+  const terminalForm = document.getElementById("terminal-form");
+  const commandInput = document.getElementById("command-input");
+  const terminalOutput = document.getElementById("terminal-output");
+
+  const commands = {
+    help:
+      "Available commands:\nhelp     Show available commands\nabout    About Satyam\nprojects List portfolio projects\nskills   Show learning areas\ncontact  Show contact information\nclear    Clear the terminal",
+    about:
+      "Satyam Kumar\nBCA graduate focused on cybersecurity, networking, and security automation.",
+    projects:
+      "SSH Brute-Force Detector\nNmap Scan Automation\nScapy Packet Sniffer\nAWS S3 Security Auditor",
+    skills:
+      "Python | Nmap | Scapy | Linux | Networking | AWS | GitHub | Log Analysis",
+    contact:
+      "Email: kts441315@gmail.com\nGitHub: github.com/KumarSatyam36"
+  };
+
+  terminalForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const command = commandInput.value.trim().toLowerCase();
+    commandInput.value = "";
+
+    if (command === "clear") {
+      terminalOutput.textContent = "";
+      return;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(commands, command)) {
+      terminalOutput.textContent = commands[command];
+    } else {
+      terminalOutput.textContent =
+        command
+          ? 'Command not recognized: "' + command + '". Type "help".'
+          : 'Type "help" to see available commands.';
+    }
+  });
 </script>
+
 </body>
 </html>
